@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jexa Digital | Digital Agency & Creative Studio</title>
+<meta name="description" content="Jexa Digital builds high-converting websites, mobile apps and digital brands for growing businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: { extend: {
+    fontFamily: {
+      sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      serif: ['"Playfair Display"', 'Georgia', 'serif']
+    },
+    colors: { onyx: '#0B0C10', slate2: '#1F2833', cyan: '#66FCF1', indigo2: '#6366F1', lav: '#A5B4FC', violet2: '#8B5CF6', body: '#C5C6C7' }
+  } }
+}
+</script>
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #0B0C10; --text: #C5C6C7; --cyan: #66FCF1; --violet: #8B5CF6;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 5rem); background: var(--bg); }
+  body { background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  .glass { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+  .grad-text { background: linear-gradient(100deg, #66FCF1 0%, #A5B4FC 55%, #8B5CF6 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .card { transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease; }
+  .card:hover { transform: translateY(-6px); border-color: rgba(102,252,241,.35); box-shadow: 0 18px 50px -20px rgba(102,252,241,.25); }
+  .glow-btn { transition: box-shadow .3s ease, transform .3s ease; }
+  .glow-btn:hover { box-shadow: 0 0 0 1px rgba(102,252,241,.5), 0 0 28px rgba(102,252,241,.45); transform: translateY(-1px); }
+  .zoom img, .zoom .art { transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+  .zoom:hover .art { transform: scale(1.08); }
+  .field { width: 100%; background: rgba(11,12,16,.6); border: 1px solid rgba(255,255,255,.1); border-radius: .85rem; padding: .8rem 1rem; color: #fff; transition: border-color .2s, box-shadow .2s; }
+  .field::placeholder { color: #6b7280; }
+  .field:focus { outline: none; border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(102,252,241,.15); }
+  select.field option { background: #1F2833; }
+  @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  .rise { opacity: 0; animation: rise .8s cubic-bezier(.2,.7,.2,1) forwards; }
+  @keyframes ping2 { 75%, 100% { transform: scale(2.4); opacity: 0; } }
+  .ping2 { animation: ping2 1.8s cubic-bezier(0,0,.2,1) infinite; }
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+  .float { animation: float 9s ease-in-out infinite; }
+  :focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 6px; }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; opacity: 1 !important; } }
+</style>
+</head>
+<body class="font-sans text-body leading-relaxed">
+
+<!-- Background glow spots -->
+<div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+  <div class="float absolute -top-40 -left-32 h-[28rem] w-[28rem] rounded-full bg-cyan/15 blur-[120px]"></div>
+  <div class="float absolute top-1/3 -right-40 h-[32rem] w-[32rem] rounded-full bg-violet2/20 blur-[130px]" style="animation-delay:-4s"></div>
+  <div class="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-indigo2/10 blur-[120px]"></div>
+</div>
+
+<!-- 1. NAVIGATION -->
+<header class="sticky z-50" style="top: env(safe-area-inset-top, 0px)">
+  <nav class="glass mx-auto mt-3 flex max-w-6xl items-center justify-between rounded-2xl px-5 py-3 sm:mt-4 sm:px-6" style="width: calc(100% - 1.5rem)" aria-label="Main">
+    <a href="#home" class="flex items-center gap-1 text-lg font-bold tracking-wide text-white">
+      JEXA DIGITAL<span class="mt-1 h-2 w-2 rounded-full bg-cyan shadow-[0_0_12px_#66FCF1]"></span>
+    </a>
+    <ul class="hidden items-center gap-8 text-sm font-medium md:flex">
+      <li><a class="transition hover:text-cyan" href="#home">Home</a></li>
+      <li><a class="transition hover:text-cyan" href="#services">Services</a></li>
+      <li><a class="transition hover:text-cyan" href="#portfolio">Portfolio</a></li>
+      <li><a class="transition hover:text-cyan" href="#about">About</a></li>
+      <li><a class="transition hover:text-cyan" href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="glow-btn hidden rounded-full bg-cyan px-5 py-2 text-sm font-semibold text-onyx md:inline-block">Let's Talk</a>
+    <button id="menuBtn" class="rounded-lg p-2 text-white md:hidden" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </nav>
+  <div id="mobileMenu" class="glass mx-auto mt-2 hidden max-w-6xl rounded-2xl p-5 md:hidden" style="width: calc(100% - 1.5rem)">
+    <ul class="flex flex-col gap-4 text-base font-medium">
+      <li><a href="#home">Home</a></li><li><a href="#services">Services</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="glow-btn block rounded-full bg-cyan px-5 py-2.5 text-center font-semibold text-onyx">Let's Talk</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+<!-- 2. HERO -->
+<section id="home" class="mx-auto max-w-5xl px-5 pb-24 pt-20 text-center sm:pt-28 lg:pt-36">
+  <div class="rise glass inline-flex items-center gap-3 rounded-full px-4 py-1.5 text-sm text-lav">
+    <span class="relative flex h-2 w-2"><span class="ping2 absolute inline-flex h-full w-full rounded-full bg-cyan"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-cyan"></span></span>
+    ✨ Digital Agency &amp; Creative Studio
+  </div>
+  <h1 class="rise mt-8 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-6xl lg:text-7xl" style="animation-delay:.12s">
+    We Craft High-Impact &amp; <span class="grad-text font-serif italic font-semibold pr-1">Aesthetic</span> Digital Experiences.
+  </h1>
+  <p class="rise mx-auto mt-6 max-w-2xl text-base sm:text-lg" style="animation-delay:.24s">
+    Turning bold ideas into high-converting websites, sleek mobile apps, and modern digital branding for growing businesses.
+  </p>
+  <div class="rise mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row" style="animation-delay:.36s">
+    <a href="#portfolio" class="glow-btn w-full rounded-full bg-cyan px-8 py-3.5 font-semibold text-onyx sm:w-auto">Explore Our Work</a>
+    <a href="#services" class="glass w-full rounded-full px-8 py-3.5 font-semibold text-white transition hover:border-cyan/50 hover:bg-white/10 sm:w-auto">Our Services</a>
+  </div>
+</section>
+
+<!-- 3. SERVICES -->
+<section id="services" class="mx-auto max-w-6xl px-5 py-20">
+  <h2 class="text-3xl font-bold text-white sm:text-4xl">Capabilities &amp; <span class="grad-text font-serif italic font-semibold">Solutions</span></h2>
+  <p class="mt-3 max-w-xl">Everything you need to launch, grow and stand out online, built by one team.</p>
+  <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <article class="card glass rounded-2xl p-7">
+      <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-cyan/10 text-cyan"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-5 4 5 4M16 8l5 4-5 4M14 5l-4 14"/></svg></div>
+      <h3 class="text-xl font-semibold text-white">Custom Web Development</h3>
+      <p class="mt-2 text-sm">Fast, secure sites and web apps built with Laravel, PHP, React and Tailwind.</p>
+    </article>
+    <article class="card glass rounded-2xl p-7">
+      <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-violet2/15 text-lav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div>
+      <h3 class="text-xl font-semibold text-white">Mobile App Development</h3>
+      <p class="mt-2 text-sm">Android and cross-platform apps that feel native and scale with your users.</p>
+    </article>
+    <article class="card glass rounded-2xl p-7">
+      <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-cyan/10 text-cyan"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1.4 0 2-1 1.5-2.2-.5-1.2.3-2.3 1.6-2.3H17a4 4 0 0 0 4-4C21 6.8 17 3 12 3z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10.5" cy="7.5" r="1"/><circle cx="15" cy="8" r="1"/></svg></div>
+      <h3 class="text-xl font-semibold text-white">UI/UX &amp; Brand Design</h3>
+      <p class="mt-2 text-sm">Aesthetic layouts, logos and clickable prototypes that people remember.</p>
+    </article>
+    <article class="card glass flex flex-col gap-5 rounded-2xl p-7 sm:col-span-2 sm:flex-row sm:items-center lg:col-span-3">
+      <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-violet2/15 text-lav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></div>
+      <div>
+        <h3 class="text-xl font-semibold text-white">Digital Growth &amp; SEO</h3>
+        <p class="mt-2 text-sm">Data-driven optimization that turns traffic into customers, with clear reporting on what is working.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 4. PORTFOLIO -->
+<section id="portfolio" class="mx-auto max-w-6xl px-5 py-20">
+  <h2 class="text-3xl font-bold text-white sm:text-4xl">Selected <span class="grad-text font-serif italic font-semibold">Work</span></h2>
+  <p class="mt-3 max-w-xl">A few recent projects. Sample projects shown as placeholders.</p>
+  <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+    <a href="#contact" class="zoom card glass group block overflow-hidden rounded-2xl">
+      <div class="h-52 overflow-hidden">
+        <div class="art flex h-full w-full items-end bg-gradient-to-br from-cyan/30 via-indigo2/30 to-onyx p-5">
+          <div class="w-full rounded-lg border border-white/10 bg-onyx/70 p-3"><div class="h-2 w-1/3 rounded bg-cyan/70"></div><div class="mt-2 grid grid-cols-3 gap-2"><div class="h-12 rounded bg-white/10"></div><div class="h-12 rounded bg-white/10"></div><div class="h-12 rounded bg-white/10"></div></div></div>
+        </div>
+      </div>
+      <div class="p-6">
+        <h3 class="text-lg font-semibold text-white">Orbit Commerce</h3>
+        <p class="mt-1 text-sm">Online store with fast checkout and an inventory dashboard.</p>
+        <div class="mt-4 flex flex-wrap gap-2 text-xs"><span class="rounded-full border border-cyan/30 px-3 py-1 text-cyan">Laravel</span><span class="rounded-full border border-cyan/30 px-3 py-1 text-cyan">Tailwind</span><span class="rounded-full border border-cyan/30 px-3 py-1 text-cyan">MySQL</span></div>
+      </div>
+    </a>
+
+    <a href="#contact" class="zoom card glass group block overflow-hidden rounded-2xl">
+      <div class="h-52 overflow-hidden">
+        <div class="art flex h-full w-full items-center justify-center bg-gradient-to-tr from-violet2/40 via-onyx to-cyan/20">
+          <div class="h-40 w-24 rounded-2xl border border-white/20 bg-onyx/80 p-2"><div class="h-3 w-8 rounded bg-lav/80"></div><div class="mt-2 h-16 rounded-lg bg-violet2/40"></div><div class="mt-2 h-3 rounded bg-white/10"></div><div class="mt-1 h-3 w-2/3 rounded bg-white/10"></div></div>
+        </div>
+      </div>
+      <div class="p-6">
+        <h3 class="text-lg font-semibold text-white">Pulse Fitness App</h3>
+        <p class="mt-1 text-sm">Workout tracking app with live progress and reminders.</p>
+        <div class="mt-4 flex flex-wrap gap-2 text-xs"><span class="rounded-full border border-lav/30 px-3 py-1 text-lav">Android</span><span class="rounded-full border border-lav/30 px-3 py-1 text-lav">Flutter</span><span class="rounded-full border border-lav/30 px-3 py-1 text-lav">Firebase</span></div>
+      </div>
+    </a>
+
+    <a href="#contact" class="zoom card glass group block overflow-hidden rounded-2xl md:col-span-2 lg:col-span-1">
+      <div class="h-52 overflow-hidden">
+        <div class="art flex h-full w-full items-center justify-center bg-gradient-to-bl from-indigo2/40 via-onyx to-violet2/30">
+          <div class="flex items-center gap-4"><div class="h-16 w-16 rounded-full bg-gradient-to-br from-cyan to-indigo2"></div><div><div class="h-3 w-28 rounded bg-white/70"></div><div class="mt-2 h-2 w-20 rounded bg-white/25"></div></div></div>
+        </div>
+      </div>
+      <div class="p-6">
+        <h3 class="text-lg font-semibold text-white">Lumen Studio Brand</h3>
+        <p class="mt-1 text-sm">Logo, colour system and a launch website for a design studio.</p>
+        <div class="mt-4 flex flex-wrap gap-2 text-xs"><span class="rounded-full border border-cyan/30 px-3 py-1 text-cyan">Branding</span><span class="rounded-full border border-cyan/30 px-3 py-1 text-cyan">Figma</span><span class="rounded-full border border-cyan/30 px-3 py-1 text-cyan">React</span></div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- 5. WHY US -->
+<section id="about" class="mx-auto max-w-6xl px-5 py-20">
+  <div class="glass rounded-3xl p-8 sm:p-12">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl font-bold text-white sm:text-4xl">Built to be <span class="grad-text font-serif italic font-semibold">secure</span>, fast and ready to grow.</h2>
+      <p class="mt-3">The look gets attention. The engineering underneath keeps it working.</p>
+    </div>
+    <div class="mt-10 grid gap-8 sm:grid-cols-3">
+      <div><div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-cyan/10 text-cyan"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6l8-3z"/><path d="m9 12 2 2 4-4"/></svg></div><h3 class="font-semibold text-white">Backend security</h3><p class="mt-1 text-sm">Validated input, hashed credentials and safe database access by default.</p></div>
+      <div><div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-violet2/15 text-lav"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7l9 5 9-5-9-5zM3 12l9 5 9-5M3 17l9 5 9-5"/></svg></div><h3 class="font-semibold text-white">Modern architecture</h3><p class="mt-1 text-sm">Clean, modular code that is easy to extend when your business changes.</p></div>
+      <div><div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-cyan/10 text-cyan"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div><h3 class="font-semibold text-white">Lightning-fast performance</h3><p class="mt-1 text-sm">Optimized assets and lean pages that load quickly on any connection.</p></div>
+    </div>
+    <div class="mt-10 flex flex-wrap gap-2 border-t border-white/10 pt-6 text-sm">
+      <span class="rounded-full bg-white/5 px-4 py-1.5 text-white">Laravel</span><span class="rounded-full bg-white/5 px-4 py-1.5 text-white">PHP</span><span class="rounded-full bg-white/5 px-4 py-1.5 text-white">React</span><span class="rounded-full bg-white/5 px-4 py-1.5 text-white">Tailwind CSS</span><span class="rounded-full bg-white/5 px-4 py-1.5 text-white">MySQL</span><span class="rounded-full bg-white/5 px-4 py-1.5 text-white">Flutter</span><span class="rounded-full bg-white/5 px-4 py-1.5 text-white">Figma</span>
+    </div>
+  </div>
+</section>
+
+<!-- 6. CONTACT -->
+<section id="contact" class="mx-auto max-w-3xl px-5 py-20">
+  <div class="text-center">
+    <h2 class="text-3xl font-bold text-white sm:text-4xl">Let's build something <span class="grad-text font-serif italic font-semibold">remarkable</span>.</h2>
+    <p class="mt-3">Tell us about your project and we'll reply within one business day.</p>
+  </div>
+  <form id="leadForm" class="glass mt-10 grid gap-5 rounded-3xl p-6 sm:grid-cols-2 sm:p-10 shadow-[0_30px_80px_-40px_rgba(102,252,241,.3)]" novalidate>
+    <label class="block text-sm font-medium text-white">Name
+      <input id="name" name="name" type="text" required autocomplete="name" placeholder="Your name" class="field mt-2 font-normal">
+    </label>
+    <label class="block text-sm font-medium text-white">Email
+      <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@company.com" class="field mt-2 font-normal">
+    </label>
+    <label class="block text-sm font-medium text-white sm:col-span-2">Service
+      <select id="service" name="service" required class="field mt-2 font-normal">
+        <option value="" disabled selected>Select a service</option>
+        <option>Custom Web Development</option>
+        <option>Mobile App Development</option>
+        <option>UI/UX &amp; Brand Design</option>
+        <option>Digital Growth &amp; SEO</option>
+      </select>
+    </label>
+    <label class="block text-sm font-medium text-white sm:col-span-2">Message
+      <textarea id="message" name="message" rows="4" required placeholder="What are you looking to build?" class="field mt-2 resize-none font-normal"></textarea>
+    </label>
+    <p id="formError" class="hidden text-sm text-red-300 sm:col-span-2" role="alert"></p>
+    <button id="sendBtn" type="submit" class="glow-btn sm:col-span-2 rounded-full bg-cyan px-8 py-3.5 font-semibold text-onyx">Send Message</button>
+  </form>
+</section>
+</main>
+
+<!-- 7. FOOTER -->
+<footer class="border-t border-white/10">
+  <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-5 py-10 text-sm md:flex-row">
+    <div class="flex items-center gap-1 font-bold text-white">JEXA DIGITAL<span class="mt-1 h-1.5 w-1.5 rounded-full bg-cyan"></span></div>
+    <ul class="flex flex-wrap justify-center gap-6">
+      <li><a class="transition hover:text-cyan" href="#home">Home</a></li><li><a class="transition hover:text-cyan" href="#services">Services</a></li><li><a class="transition hover:text-cyan" href="#portfolio">Portfolio</a></li><li><a class="transition hover:text-cyan" href="#contact">Contact</a></li>
+    </ul>
+    <div class="flex gap-3">
+      <a href="#" aria-label="LinkedIn" class="glass flex h-10 w-10 items-center justify-center rounded-full text-xs font-bold text-white transition hover:border-cyan hover:text-cyan">in</a>
+      <a href="#" aria-label="X" class="glass flex h-10 w-10 items-center justify-center rounded-full text-xs font-bold text-white transition hover:border-cyan hover:text-cyan">X</a>
+      <a href="#" aria-label="Instagram" class="glass flex h-10 w-10 items-center justify-center rounded-full text-white transition hover:border-cyan hover:text-cyan"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></a>
+      <a href="#" aria-label="GitHub" class="glass flex h-10 w-10 items-center justify-center rounded-full text-xs font-bold text-white transition hover:border-cyan hover:text-cyan">Gh</a>
+    </div>
+  </div>
+  <p class="pb-8 text-center text-xs text-body/70">© 2026 Jexa Digital</p>
+</footer>
+
+<script>
+  // Mobile menu
+  const menuBtn = document.getElementById('menuBtn'), menu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    const open = menu.classList.toggle('hidden') === false;
+    menuBtn.setAttribute('aria-expanded', open);
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { menu.classList.add('hidden'); menuBtn.setAttribute('aria-expanded', false); }));
+
+  // Contact form (front-end only: connect to your backend or email service to deliver messages)
+  const form = document.getElementById('leadForm'), btn = document.getElementById('sendBtn'), err = document.getElementById('formError');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = form.name.value.trim(), email = form.email.value.trim(), service = form.service.value, msg = form.message.value.trim();
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!name || !emailOk || !service || !msg) {
+      err.textContent = !name ? 'Enter your name.' : !emailOk ? 'Enter a valid email address.' : !service ? 'Select a service.' : 'Write a short message about your project.';
+      err.classList.remove('hidden'); return;
+    }
+    err.classList.add('hidden');
+    btn.disabled = true; btn.textContent = 'Sending…';
+    setTimeout(() => {
+      btn.textContent = 'Message sent. We\'ll be in touch soon.';
+      form.reset();
+      setTimeout(() => { btn.disabled = false; btn.textContent = 'Send Message'; }, 3500);
+    }, 900);
+  });
+</script>
+</body>
+</html>
